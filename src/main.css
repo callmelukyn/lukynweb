@@ -3,8 +3,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+section{
+  animation: scrolling linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 35%;
+}
+
+@keyframes scrolling {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
 html {
   scrollbar-color: #e62953 #111627;
+  scroll-behavior: smooth;
 }
 * {
   box-sizing: border-box;
@@ -13,7 +30,7 @@ html {
 }
 
 body {
-  background-image: url("background.png");
+  background-image: url("img/background.png");
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-color: #111627;
@@ -72,7 +89,7 @@ section {
   margin-top: 3rem !important;
 }
 .mywork-item{
-  background-image: url("noise.png");
+  background-image: url("img/noise.png");
   border-radius: 10px;
   box-shadow: 0 3px 10px 0 #0005;
   display: grid;
