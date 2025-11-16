@@ -11,14 +11,11 @@
 </head>
 <body>
 
-
-<div class="hlavicka">
   <div class="topnav">
     <img src="img/logoicon.png" width="50" height="50">&nbsp &nbsp
     <a class="active" href="#uvod">Úvod</a>
     <a href="#maprace">Má práce</a>
     <a href="#kontakt">Kontakt</a>
-</div>
 </div>
 <section>
 <div class="inner">
@@ -26,7 +23,6 @@
   <h3 class="podnadpis">Designer, videoeditor a programátor</h3>
 </div>
 </section>
-
 
 <section id="uvod">
 <div class="inner">
@@ -37,14 +33,14 @@
   <div class="about-grid">
   <div class="a1">
   <p>Jsem student, tvůrce webových stránek i aplikací a programátor ze Znojma.</p>
-    <p>Dokončil jsem obor Informační technologie na střední škole a nyní studuji informatiku na MENDELU v Brně.</p>
+    <p>Dokončil jsem obor Informační technologie na střední škole a nyní studuji informatiku na VŠ MENDELU v Brně.</p>
     <p>Velice rád pracuji v rastrové nebo vektorové grafice. Dále se zajímám o vývoj mobilních a i webových aplikací. </p>
   </div>
 
     <div class="a2">
       <p>Technologie a programy, se kterými pracuji:</p>
     <ul>
-      <li>HTML5 a CSS3</li>
+      <li>HTML5,CSS3 & JS</li>
       <li>C++</li>
       <li>Java</li>
       <li>Kotlin</li>
@@ -74,12 +70,12 @@
       <img src="img/question-mark.webp">
     </div>
     <div class="text">
-      <p>Již brzy...</p>
+      <p>Něco chystám...</p>
     </div>
 </div>
   <div class="mywork-item">
     <div class="image">
-      <div class="bg"> <img src="img/question-mark.webp"></div>
+      <img src="img/question-mark.webp">
     </div>
     <div class="text">
       <p>Již brzy...</p>
@@ -111,5 +107,42 @@
     </small>
   </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-once");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  sections.forEach(sec => observer.observe(sec));
+});
+
+//Sticky navbar
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector(".topnav");
+  if (!nav) return;
+
+  const threshold = nav.offsetHeight + 20;
+
+  const onScroll = () => {
+    if (window.scrollY > threshold) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  };
+
+  onScroll();
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+});
+</script>
+
 </body>
 </html>
