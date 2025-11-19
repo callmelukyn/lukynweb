@@ -146,6 +146,23 @@ section {
   padding: 20px;
 }
 
+.icon-wrapper{
+    padding-top: 10px;
+    gap: 20px;
+    display: flex;
+    padding-right: 15px;
+}
+
+.contant-icon{
+    width: 40px;
+}
+
+.icon-click{
+    text-decoration: none;
+    width: 50px;
+    padding-right: 15px;
+    display: block;
+}
 
 .a1 {
 grid-area: a1;
